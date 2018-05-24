@@ -1,4 +1,4 @@
-package persistencia;
+package controlador;
 
 public class Repositorio<T> {
 
