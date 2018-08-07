@@ -4,50 +4,73 @@ import java.util.List;
 
 public class Perro implements Mascota {
 	
-	public List<Juguete> getJuguetes() {
-		return juguetes;
-	}
-
-	public void setJuguetes(List<Juguete> juguetes) {
-		this.juguetes = juguetes;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public int getNivelDeEnergia() {
-		return nivelDeEnergia;
-	}
-
-	public void setNivelDeEnergia(int nivelDeEnergia) {
-		this.nivelDeEnergia = nivelDeEnergia;
-	}
-
+	private int id ;
 	private List<Juguete> juguetes ;
 	private String nombre ;
-	private int nivelDeEnergia ;
-
+	private int energia ;
+	
+	@Override
+	public int getId() {
+		return this.id;
+	}
+	
+	@Override
+	public void setId(int myId) {
+		this.id = myId ;
+	}
+	
 	@Override
 	public void alimentate() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Barf... rrrr, aumento lvl of enrgy by 20");
+		this.setEnergia(this.getEnergia() + 20);
 	}
 	
 	@Override
 	public void rompeLasPelotas() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("me muerdo la cola");
+		this.energia -= 2 ;
 	}
-
+	
 	@Override
 	public void agregarJuguete(Juguete juguete) {
-		// TODO Auto-generated method stub
-		
+		this.juguetes.add(juguete) ;
 	}
+	
+	@Override
+	public String getNombre() {
+		return nombre;
+	}
+	
+	@Override
+	public int getEnergia() {
+		return energia;
+	}
+	
+	@Override
+	public void setEnergia(int energia) {
+		this.energia = energia;
+	}
+	
+	@Override
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	@Override
+	public void addJuguete(Juguete juguete)
+	{
+		this.juguetes.add(juguete) ;
+	}
+	
+	@Override
+	public void setJuguetes(List<Juguete> juguetes) {
+		this.juguetes = juguetes;
+	}
+	
+	@Override
+	public List<Juguete> getJuguetes() {
+		return this.juguetes;
+	}
+
 
 }
